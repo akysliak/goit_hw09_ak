@@ -15,7 +15,7 @@ def add_handler(args):  # takes *arguments: 0-unlimited
     name = args[0]  # change to 1) args[0].title() if you want to always capitalize the 1st letter or to 2) args[0].lower().title()
     phone = args[1]
     ADDRESSBOOK[name] = phone
-    return f"New contact '{name}' with the phone number '{phone}' successfully added."
+    return f"New contact '{name}' with the phone number '{phone}' successfully added"
 
 def change_handler(args):
     if len(args) < 2:
@@ -23,16 +23,16 @@ def change_handler(args):
     name = args[0]
     phone = args[1]
     if name not in ADDRESSBOOK:
-        raise KeyError(f"The phone number cannot be changed: the user name '{name}' is not in the ADDRESS BOOK.")
+        raise KeyError(f"The phone number cannot be changed: the user name '{name}' is not in the ADDRESS BOOK")
     ADDRESSBOOK[name] = phone
-    return f"Phone number for the contact '{name}' was successfully chnged. New phone number: '{phone}'."
+    return f"Phone number for the contact '{name}' was successfully changed. New phone number: '{phone}'"
 
 def phone_handler(args):
     if not args:
         raise ValueError("Enter user name")
     name = args[0]
     if name not in ADDRESSBOOK:
-        raise KeyError(f"The phone number cannot be shown: the user name '{name}' is not in the ADDRESS BOOK.")
+        raise KeyError(f"The phone number cannot be shown: the user name '{name}' is not in the ADDRESS BOOK")
     return ADDRESSBOOK[name]
 
 def show_all_handler(*args):
@@ -63,16 +63,8 @@ def input_error(fnc):
         try:
             fnc(*args)
         except (IndexError, KeyError, ValueError) as e:
-            print(e)
+            print(str(e).replace('"', ""))
             inner()
-        '''
-        except KeyError as e:
-            print(e)
-            inner()
-        except ValueError as e:
-            print(e)
-            inner()
-        '''
 
     return inner
 
