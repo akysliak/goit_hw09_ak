@@ -56,7 +56,8 @@ def phone_handler(args):
     return ADDRESSBOOK[name]
 
 def show_all_handler(*args):
-    return ADDRESSBOOK
+    res = "\n".join([f"{name}:\t{phone}" for name, phone in ADDRESSBOOK.items()]).strip()
+    return res
 
 
 COMMANDS = {
