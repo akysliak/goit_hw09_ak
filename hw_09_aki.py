@@ -43,7 +43,7 @@ COMMANDS = {
     hello_handler: ["hello"],
     add_handler: ["add"],
     change_handler: ["change"],
-    
+
     phone_handler: ["phone"],
     show_all_handler: ["show all"],
     exit_handler: ["good bye", "close", "exit"]
@@ -93,6 +93,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-#>>> change anns 2345
-#>>> add annn
