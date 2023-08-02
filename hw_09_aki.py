@@ -1,3 +1,23 @@
+'''
+Possible commands:
+    "hello", "add", "change", "phone",
+    "show all", "good bye", "close", "exit"
+Commands must be at the beginning of the input string,
+    alone or followed bye an empty space
+Recognition of the commands is case insensitive,
+    the arguments are treated with respect to their case
+    (e.g. name "ann" != "Ann")
+The format of phone numbers is not verified
+    (e.g. no checking if only digits and '+" are included),
+    an empty space is treated as the end of the provided number
+Provided arguments which are irrelevant for the specified command
+    will be ignored (the command will be executed)
+
+Possible improvements:
+    format checking of the phone numbers
+    extended functionality: e.g. delete-option
+'''
+
 ADDRESSBOOK = {}
 
 
